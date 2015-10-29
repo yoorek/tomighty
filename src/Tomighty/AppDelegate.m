@@ -56,6 +56,11 @@
     [NSApp activateIgnoringOtherApps:YES];
 }
 
+- (IBAction)addPomodoro:(id)sender {
+    [tomighty incrementPomodoroCount];
+    [self updatePomodoroCountText];
+}
+
 - (IBAction)startPomodoro:(id)sender {
     int minutes = [Preferences intValue:PREF_TIME_POMODORO];
     [self activateTimerMenuItem:self.startPomodoroMenuItem];
@@ -147,6 +152,12 @@
     
     NSString *text = [NSString stringWithFormat:@"%02d:%02d", minutes, seconds];
     [self.remainingTimeMenuItem setTitle:text];
+    if (secondsRemaining > 0) {
+        [statusIcon setTitle:text];
+    } else {
+        [statusIcon setTitle:@""];
+    }
+    
 }
 
 - (void)updatePomodoroCountText {

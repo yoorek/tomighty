@@ -16,5 +16,6 @@
 - (void)pomodoro;
 - (void)shortBreak;
 - (void)longBreak;
+- (void)setTitle: (NSString *)title;
 
 @end

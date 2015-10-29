@@ -54,8 +54,17 @@
     [statusItem setImage:blueIcon];
 }
 
+- (void) setTitle: (NSString *)title {
+    NSDictionary *attr = @{};
+  
+    NSMutableAttributedString *attributedTitle = [[NSMutableAttributedString alloc]initWithString:title attributes:attr];
+
+    [statusItem setAttributedTitle:attributedTitle];
+}
+
 - (void)createStatusItem:(NSMenu *)statusMenu {
-    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSSquareStatusItemLength];
+    statusItem = [[NSStatusBar systemStatusBar] statusItemWithLength:NSVariableStatusItemLength];
+    
     [statusItem setHighlightMode:YES];
     [statusItem setImage:blackIcon];
     [statusItem setAlternateImage:whiteIcon];

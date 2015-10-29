@@ -17,7 +17,10 @@ int const ICON_SIZE = 16;
 }
 
 + (NSImage*) loadTiffImage:(NSString*)name withSize:(int)widthAndHeight {
-    NSString* fileName = [NSString stringWithFormat:@"%@.tiff", name];
+    //NSString* fileName = [NSString stringWithFormat:@"%@.tiff", name];
+    
+    NSString* fileName = [NSString stringWithFormat:@"%@.png", name];
+
     NSImage* image = [NSImage imageNamed:fileName];
     
     NSSize size;
