@@ -10,7 +10,7 @@
 
 @implementation ImageLoader
 
-int const ICON_SIZE = 16;
+int const ICON_SIZE = 19;
 
 + (NSImage*) loadIcon:(NSString*)name {
     return [self loadTiffImage:name withSize:ICON_SIZE];
